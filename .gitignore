@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+db.sqlite3
+.env
+djangoenv/
+venv/
+staticfiles/
+*.log
+.DS_Store
+*.sock
+
+# Local planning docs (not needed on server)
+*.docx
+*.xlsx
+LYRA Colors.pdf
+LYRA Logo*.png
+Lyra Logo*.png

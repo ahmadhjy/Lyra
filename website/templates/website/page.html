@@ -1,0 +1,76 @@
+{% extends "website/base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block meta_description %}{{ page.intro }}{% endblock %}
+
+{% block content %}
+<section class="page-hero page-hero--split">
+  <div class="page-hero__accent" aria-hidden="true"></div>
+  <div class="container page-hero__grid">
+    <div class="page-hero__copy">
+      <p class="eyebrow">LYRA</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.intro %}
+      <p class="lead">{{ page.intro }}</p>
+      {% endif %}
+    </div>
+    {% if page.hero_media %}
+    <div class="page-hero__media">
+      {% include "website/includes/media_placeholder.html" with media=page.hero_media %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container content-stack">
+    {% for section in page.sections %}
+    <article class="content-block {% if section.media %}content-block--has-media{% endif %} {% if forloop.counter|divisibleby:2 %}content-block--reverse{% endif %}" id="{{ section.heading|slugify }}">
+      {% if section.media %}
+      <div class="content-block__media">
+        {% include "website/includes/media_placeholder.html" with media=section.media %}
+      </div>
+      {% endif %}
+      <div class="content-block__main">
+        <div class="content-block__marker" aria-hidden="true">{{ forloop.counter|stringformat:"02d" }}</div>
+        <div class="content-block__body">
+          <h2>{{ section.heading }}</h2>
+          {% if section.tagline %}
+          <p class="tagline">{{ section.tagline }}</p>
+          {% endif %}
+          {% for paragraph in section.paragraphs %}
+          <p>{{ paragraph }}</p>
+          {% endfor %}
+          {% if section.bullets %}
+          <ul class="bullet-list">
+            {% for item in section.bullets %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% if section.cards %}
+          <div class="card-grid card-grid--people">
+            {% for card in section.cards %}
+            <div class="card card--profile">
+              <h3>{{ card.name }}</h3>
+              <p class="role">{{ card.role }}</p>
+              <p>{{ card.bio }}</p>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cta-band cta-band--compact">
+  <div class="cta-band__glow" aria-hidden="true"></div>
+  <div class="container cta-band-inner">
+    <p>Ready to explore partnership?</p>
+    <a href="{% url 'contact' %}" class="btn btn-light">Contact us</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "website/base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<section class="page-hero page-hero--split">
+  <div class="page-hero__accent" aria-hidden="true"></div>
+  <div class="container page-hero__grid">
+    <div class="page-hero__copy">
+      <p class="eyebrow">Get in touch</p>
+      <h1>{{ title }}</h1>
+      <p class="lead">{{ intro }}</p>
+    </div>
+    <div class="page-hero__media">
+      {% include "website/includes/media_placeholder.html" with media=hero_media %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div class="contact-copy">
+      <div class="contact-side-media">
+        {% include "website/includes/media_placeholder.html" with media=side_media %}
+      </div>
+      <h2>{{ cta }}</h2>
+      <p>
+        This demo includes a contact form layout. In production, submissions will be
+        connected to your email or CRM.
+      </p>
+      <ul class="contact-meta">
+        <li><strong>Phase 1</strong> Informative website &amp; branding</li>
+        <li><strong>Phase 2</strong> Courses platform &amp; dashboards</li>
+      </ul>
+    </div>
+    {% if form_sent %}
+    <div class="contact-form contact-form--success" role="status">
+      <h3>Thank you</h3>
+      <p>Your message was received (demo). We will connect email delivery in the next iteration.</p>
+      <a href="{% url 'home' %}" class="btn btn-primary">Back to home</a>
+    </div>
+    {% else %}
+    <form class="contact-form" method="post">
+      {% csrf_token %}
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" placeholder="Your name" required>
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" placeholder="you@organization.com" required>
+      </label>
+      <label>
+        <span>Organization</span>
+        <input type="text" name="organization" placeholder="Company or institution">
+      </label>
+      <label>
+        <span>Message</span>
+        <textarea name="message" rows="5" placeholder="How can LYRA support your AI capability goals?" required></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">Send message (demo)</button>
+      <p class="form-note">Demo only — form is not wired to email yet.</p>
+    </form>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

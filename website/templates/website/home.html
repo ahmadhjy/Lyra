@@ -1,0 +1,111 @@
+{% extends "website/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">AI Capability &amp; Transformation</p>
+      <h1>{{ hero_title }}</h1>
+      <p class="lead">{{ hero_subtitle }}</p>
+      <div class="hero-actions">
+        <a href="{% url 'about' %}" class="btn btn-primary">About Lyra</a>
+        <a href="{% url 'contact' %}" class="btn btn-ghost">Start a conversation</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat__num">3</span>
+          <span class="hero-stat__label">Interconnected pillars</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat__num">AI</span>
+          <span class="hero-stat__label">Literacy to transformation</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="node-constellation" aria-hidden="true">
+        <svg class="node-constellation__svg" viewBox="0 0 400 380" fill="none">
+          <defs>
+            <linearGradient id="lyraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#122E6F"/>
+              <stop offset="55%" stop-color="#1a4a9e"/>
+              <stop offset="100%" stop-color="#77F7F5"/>
+            </linearGradient>
+          </defs>
+          <circle class="node-orbit" cx="200" cy="190" r="140" stroke="url(#lyraGrad)" stroke-width="1" opacity="0.25"/>
+          <circle class="node-orbit node-orbit--2" cx="200" cy="190" r="100" stroke="url(#lyraGrad)" stroke-width="1" opacity="0.18"/>
+          <path d="M80 280 L200 80 L320 280" stroke="url(#lyraGrad)" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+          <circle class="node-pulse" cx="80" cy="280" r="18" fill="#122E6F"/>
+          <circle class="node-pulse node-pulse--delay" cx="200" cy="80" r="18" fill="#3ec9c7"/>
+          <circle class="node-pulse node-pulse--delay2" cx="320" cy="280" r="18" fill="#77F7F5"/>
+          <circle cx="80" cy="280" r="8" fill="#fff"/>
+          <circle cx="200" cy="80" r="8" fill="#fff"/>
+          <circle cx="320" cy="280" r="8" fill="#fff"/>
+        </svg>
+        <div class="node-label node-label--1">Agora</div>
+        <div class="node-label node-label--2">Education</div>
+        <div class="node-label node-label--3">Advisory</div>
+      </div>
+    </div>
+  </div>
+  <div class="container hero-media-row">
+    {% include "website/includes/media_placeholder.html" with media=hero_media %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section-header section-header--center">
+      <p class="eyebrow">Our Ecosystem</p>
+      <h2>Three pillars.<br>One capability system.</h2>
+      <p class="section-intro">
+        Each pillar addresses a different layer of readiness. Together, they form a unified capability ecosystem.
+      </p>
+    </header>
+    <div class="card-grid card-grid--pillars">
+      {% for pillar in pillars %}
+      <article class="card card--pillar">
+        {% include "website/includes/media_placeholder.html" with media=pillar.media %}
+        <span class="card-index">0{{ forloop.counter }}</span>
+        <span class="card-accent"></span>
+        <h3>{{ pillar.title }}</h3>
+        <p>{{ pillar.summary }}</p>
+        <a href="{% url 'ecosystem' %}" class="card-link">Explore &rarr;</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container approach-grid">
+    <div class="approach-grid__copy">
+      <p class="eyebrow eyebrow--light">Our Approach</p>
+      <h2>From literacy to transformation</h2>
+      <p>
+        Capability is built through a structured progression: understanding, application,
+        and integration within real environments.
+      </p>
+      <a href="{% url 'approach' %}" class="btn btn-light">See our approach</a>
+    </div>
+    <div class="approach-grid__media">
+      {% include "website/includes/media_placeholder.html" with media=approach_media %}
+    </div>
+    <ol class="steps steps--dark approach-grid__steps">
+      <li><strong>AI Literacy</strong><span>Understanding before application</span></li>
+      <li><strong>AI Capability</strong><span>From knowledge to execution</span></li>
+      <li><strong>AI Transformation</strong><span>Embedding AI into how systems operate</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-band__glow" aria-hidden="true"></div>
+  <div class="container cta-band-inner">
+    <h2>Build real AI capability where it matters</h2>
+    <a href="{% url 'contact' %}" class="btn btn-light">Partnership &amp; contact</a>
+  </div>
+</section>
+{% endblock %}

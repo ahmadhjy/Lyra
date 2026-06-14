@@ -1,0 +1,31 @@
+<figure class="media-placeholder media-placeholder--{{ media.ratio|default:'4x3' }} {% if media.variant %}media-placeholder--{{ media.variant }}{% endif %}" role="img" aria-label="{{ media.label }} placeholder">
+  <div class="media-placeholder__frame">
+    <div class="media-placeholder__pattern" aria-hidden="true"></div>
+    <div class="media-placeholder__icon" aria-hidden="true">
+      {% if media.icon == "network" %}
+      <svg viewBox="0 0 48 48" fill="none"><circle cx="12" cy="36" r="6" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="36" r="6" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="10" r="6" stroke="currentColor" stroke-width="2"/><path d="M16 32 L22 16 M26 16 L32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      {% elif media.icon == "people" %}
+      <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="14" r="7" stroke="currentColor" stroke-width="2"/><path d="M8 40c0-8 7-14 16-14s16 6 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      {% elif media.icon == "education" %}
+      <svg viewBox="0 0 48 48" fill="none"><path d="M6 18 L24 8 L42 18 L24 28 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 22 V34 C14 34 18 38 24 38 C30 38 34 34 34 34 V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      {% elif media.icon == "building" %}
+      <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="36" rx="2" stroke="currentColor" stroke-width="2"/><path d="M18 16 H22 M26 16 H30 M18 24 H22 M26 24 H30 M18 32 H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      {% elif media.icon == "strategy" %}
+      <svg viewBox="0 0 48 48" fill="none"><path d="M8 38 L18 24 L28 30 L40 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="10" r="3" fill="currentColor"/></svg>
+      {% elif media.icon == "vision" %}
+      <svg viewBox="0 0 48 48" fill="none"><path d="M24 10 C14 10 6 24 6 24 C6 24 14 38 24 38 C34 38 42 24 42 24 C42 24 34 10 24 10 Z" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/></svg>
+      {% elif media.icon == "contact" %}
+      <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 16 L24 26 L42 16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      {% elif media.icon == "audience" %}
+      <svg viewBox="0 0 48 48" fill="none"><circle cx="16" cy="18" r="5" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="18" r="5" stroke="currentColor" stroke-width="2"/><path d="M6 38c0-6 5-10 10-10 M32 28c5 0 10 4 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      {% else %}
+      <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="10" width="32" height="28" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="22" r="4" stroke="currentColor" stroke-width="2"/><path d="M8 32 L22 24 L30 28 L40 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      {% endif %}
+    </div>
+    <span class="media-placeholder__badge">Media</span>
+  </div>
+  <figcaption class="media-placeholder__caption">
+    <strong class="media-placeholder__label">{{ media.label }}</strong>
+    <span class="media-placeholder__size">Recommended: {{ media.size }}</span>
+  </figcaption>
+</figure>

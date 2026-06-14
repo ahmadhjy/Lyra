@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}LYRA{% endblock %} | AI Capability & Transformation</title>
+  <meta name="description" content="{% block meta_description %}LYRA prepares people and institutions for the AI era through strategy, learning, and implementation.{% endblock %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="icon" href="{% static 'brand/logo-cropped.png' %}" type="image/png">
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg__mesh"></div>
+    <div class="page-bg__grid"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="{% url 'home' %}" class="logo-link" aria-label="LYRA home">
+        <img src="{% static 'brand/logo-cropped.png' %}" alt="LYRA" class="logo-img logo-img--header">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Main">
+        {% for item in nav_items %}
+        {% if item.url_name != 'contact' %}
+        <a href="{% url item.url_name %}"
+           class="{% if active_page == item.url_name %}is-active{% endif %}">
+          {{ item.label }}
+        </a>
+        {% endif %}
+        {% endfor %}
+        <a href="{% url 'contact' %}" class="nav-cta {% if active_page == 'contact' %}is-active{% endif %}">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="{% url 'home' %}" class="footer-logo-link">
+            <img src="{% static 'brand/logo-white.png' %}" alt="LYRA" class="logo-img logo-img--footer">
+          </a>
+          <p>AI capability and transformation for the era ahead.</p>
+        </div>
+        <div class="footer-nav">
+          <h3>Explore</h3>
+          <div class="footer-links">
+            {% for item in nav_items %}
+            {% if item.url_name != 'contact' %}
+            <a href="{% url item.url_name %}">{{ item.label }}</a>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="footer-nav">
+          <h3>Connect</h3>
+          <div class="footer-links">
+            <a href="{% url 'contact' %}">Partnership</a>
+            <a href="{% url 'contact' %}">Contact us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {% now "Y" %} LYRA. All rights reserved.</p>
+        <span class="footer-mark" aria-hidden="true">
+          <svg viewBox="0 0 80 70" fill="none"><circle cx="20" cy="55" r="8" stroke="currentColor" stroke-width="3"/><circle cx="40" cy="15" r="8" stroke="currentColor" stroke-width="3"/><circle cx="60" cy="55" r="8" stroke="currentColor" stroke-width="3"/><path d="M26 50 L36 22 M44 22 L54 50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="chat-fab" id="chat-fab" aria-label="Open chat assistant" aria-expanded="false">
+    <svg class="chat-fab__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3C7.03 3 3 6.58 3 11c0 2.1.9 4.01 2.41 5.47L4 21l4.84-1.62A9.8 9.8 0 0 0 12 19c4.97 0 9-3.58 9-8s-4.03-8-9-8Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <circle cx="8.25" cy="11" r="1" fill="currentColor"/>
+      <circle cx="12" cy="11" r="1" fill="currentColor"/>
+      <circle cx="15.75" cy="11" r="1" fill="currentColor"/>
+    </svg>
+    <span class="chat-fab__label">Chat</span>
+  </button>
+
+  <div class="chat-panel" id="chat-panel" role="dialog" aria-label="Chat assistant" aria-hidden="true" hidden>
+    <div class="chat-panel__header">
+      <div class="chat-panel__title">
+        <span class="chat-panel__dot" aria-hidden="true"></span>
+        LYRA Assistant
+      </div>
+      <button type="button" class="chat-panel__close" id="chat-panel-close" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="chat-panel__body">
+      <p class="chat-panel__message">AI assistant coming soon. This space will connect to your trained chatbot.</p>
+    </div>
+    <div class="chat-panel__footer">
+      <input type="text" class="chat-panel__input" placeholder="Type a message…" disabled aria-disabled="true">
+      <button type="button" class="chat-panel__send" disabled aria-disabled="true" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
