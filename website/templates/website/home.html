@@ -61,23 +61,25 @@
 
 <section class="section section-dark">
   <div class="container approach-grid">
-    <div class="approach-grid__copy">
-      <p class="eyebrow eyebrow--light">Our Approach</p>
-      <h2>From literacy to transformation</h2>
-      <p>
-        Capability is built through a structured progression: understanding, application,
-        and integration within real environments.
-      </p>
-      <a href="{% url 'approach' %}" class="btn btn-light">See our approach</a>
+    <div class="approach-grid__left">
+      <div class="approach-grid__copy">
+        <p class="eyebrow eyebrow--light">Our Approach</p>
+        <h2>From literacy to transformation</h2>
+        <p>
+          Capability is built through a structured progression: understanding, application,
+          and integration within real environments.
+        </p>
+        <a href="{% url 'approach' %}" class="btn btn-light">See our approach</a>
+      </div>
+      <ol class="steps steps--dark approach-grid__steps">
+        <li><strong>AI Literacy</strong><span>Understanding before application</span></li>
+        <li><strong>AI Capability</strong><span>From knowledge to execution</span></li>
+        <li><strong>AI Transformation</strong><span>Embedding AI into how systems operate</span></li>
+      </ol>
     </div>
     <div class="approach-grid__media">
       {% include "website/includes/media_placeholder.html" with media=approach_media %}
     </div>
-    <ol class="steps steps--dark approach-grid__steps">
-      <li><strong>AI Literacy</strong><span>Understanding before application</span></li>
-      <li><strong>AI Capability</strong><span>From knowledge to execution</span></li>
-      <li><strong>AI Transformation</strong><span>Embedding AI into how systems operate</span></li>
-    </ol>
   </div>
 </section>
 

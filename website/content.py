@@ -37,7 +37,7 @@ HOME = {
     ),
     "hero_diagram_media": media(
         "LYRA ecosystem diagram",
-        "900 × 900 px",
+        "1164 × 941 px",
         ratio="square",
         icon="network",
         variant="diagram",
@@ -46,7 +46,7 @@ HOME = {
     "approach_media": media(
         "Capability model — literacy to transformation",
         "900 × 600 px",
-        ratio="4x3",
+        ratio="3x2",
         icon="strategy",
         file="media/home/approach-literacy.png",
     ),
