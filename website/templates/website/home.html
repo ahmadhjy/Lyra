@@ -44,10 +44,10 @@
     </header>
     <div class="card-grid card-grid--pillars">
       {% for pillar in pillars %}
-      <article class="card card--pillar">
+      <article class="card card--pillar{% if pillar.media.file %} card--has-media{% endif %}">
         {% include "website/includes/media_placeholder.html" with media=pillar.media %}
+        {% if not pillar.media.file %}<span class="card-accent"></span>{% endif %}
         <span class="card-index">0{{ forloop.counter }}</span>
-        <span class="card-accent"></span>
         <h3>{{ pillar.title }}</h3>
         <p>{{ pillar.summary }}</p>
         <a href="{% url 'ecosystem' %}" class="card-link">Explore &rarr;</a>
