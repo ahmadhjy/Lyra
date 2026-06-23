@@ -47,10 +47,12 @@
       <article class="card card--pillar{% if pillar.media.file %} card--has-media{% endif %}">
         {% include "website/includes/media_placeholder.html" with media=pillar.media %}
         {% if not pillar.media.file %}<span class="card-accent"></span>{% endif %}
-        <span class="card-index">0{{ forloop.counter }}</span>
-        <h3>{{ pillar.title }}</h3>
-        <p>{{ pillar.summary }}</p>
-        <a href="{% url 'ecosystem' %}" class="card-link">Explore &rarr;</a>
+        <div class="card__body">
+          <span class="card-index">0{{ forloop.counter }}</span>
+          <h3>{{ pillar.title }}</h3>
+          <p>{{ pillar.summary }}</p>
+          <a href="{% url 'ecosystem' %}" class="card-link">Explore &rarr;</a>
+        </div>
       </article>
       {% endfor %}
     </div>
