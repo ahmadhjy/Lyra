@@ -554,11 +554,13 @@ h3 {
 }
 
 .card--pillar.card--has-media {
+  padding: 0 0 2.25rem;
   overflow: hidden;
 }
 
 .card--pillar.card--has-media .media-block {
   margin: 0 0 1.25rem;
+  width: 100%;
 }
 
 .card--pillar.card--has-media .media-block__frame {
@@ -745,6 +747,7 @@ h3 {
 .card--pillar.card--has-media .media-block:has(.media-block__img) .media-block__frame {
   border-radius: 0;
   box-shadow: none;
+  border: none;
 }
 
 .media-block--diagram .media-block__frame {
