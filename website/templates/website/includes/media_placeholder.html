@@ -1,7 +1,11 @@
-<figure class="media-placeholder media-placeholder--{{ media.ratio|default:'4x3' }} {% if media.variant %}media-placeholder--{{ media.variant }}{% endif %}" role="img" aria-label="{{ media.label }} placeholder">
-  <div class="media-placeholder__frame">
-    <div class="media-placeholder__pattern" aria-hidden="true"></div>
-    <div class="media-placeholder__icon" aria-hidden="true">
+{% load static %}
+<figure class="media-block media-block--{{ media.ratio|default:'4x3' }} {% if media.variant %}media-block--{{ media.variant }}{% endif %}" {% if not media.file %}role="img" aria-label="{{ media.label }} placeholder"{% endif %}>
+  <div class="media-block__frame">
+    {% if media.file %}
+    <img src="{% static media.file %}" alt="{{ media.label }}" class="media-block__img" loading="lazy" decoding="async">
+    {% else %}
+    <div class="media-block__pattern" aria-hidden="true"></div>
+    <div class="media-block__icon" aria-hidden="true">
       {% if media.icon == "network" %}
       <svg viewBox="0 0 48 48" fill="none"><circle cx="12" cy="36" r="6" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="36" r="6" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="10" r="6" stroke="currentColor" stroke-width="2"/><path d="M16 32 L22 16 M26 16 L32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       {% elif media.icon == "people" %}
@@ -22,10 +26,13 @@
       <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="10" width="32" height="28" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="22" r="4" stroke="currentColor" stroke-width="2"/><path d="M8 32 L22 24 L30 28 L40 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       {% endif %}
     </div>
-    <span class="media-placeholder__badge">Media</span>
+    <span class="media-block__badge">Media</span>
+    {% endif %}
   </div>
-  <figcaption class="media-placeholder__caption">
-    <strong class="media-placeholder__label">{{ media.label }}</strong>
-    <span class="media-placeholder__size">Recommended: {{ media.size }}</span>
+  {% if not media.file %}
+  <figcaption class="media-block__caption">
+    <strong class="media-block__label">{{ media.label }}</strong>
+    <span class="media-block__size">Recommended: {{ media.size }}</span>
   </figcaption>
+  {% endif %}
 </figure>

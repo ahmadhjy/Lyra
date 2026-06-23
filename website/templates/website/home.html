@@ -25,29 +25,7 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="node-constellation" aria-hidden="true">
-        <svg class="node-constellation__svg" viewBox="0 0 400 380" fill="none">
-          <defs>
-            <linearGradient id="lyraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#122E6F"/>
-              <stop offset="55%" stop-color="#1a4a9e"/>
-              <stop offset="100%" stop-color="#77F7F5"/>
-            </linearGradient>
-          </defs>
-          <circle class="node-orbit" cx="200" cy="190" r="140" stroke="url(#lyraGrad)" stroke-width="1" opacity="0.25"/>
-          <circle class="node-orbit node-orbit--2" cx="200" cy="190" r="100" stroke="url(#lyraGrad)" stroke-width="1" opacity="0.18"/>
-          <path d="M80 280 L200 80 L320 280" stroke="url(#lyraGrad)" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
-          <circle class="node-pulse" cx="80" cy="280" r="18" fill="#122E6F"/>
-          <circle class="node-pulse node-pulse--delay" cx="200" cy="80" r="18" fill="#3ec9c7"/>
-          <circle class="node-pulse node-pulse--delay2" cx="320" cy="280" r="18" fill="#77F7F5"/>
-          <circle cx="80" cy="280" r="8" fill="#fff"/>
-          <circle cx="200" cy="80" r="8" fill="#fff"/>
-          <circle cx="320" cy="280" r="8" fill="#fff"/>
-        </svg>
-        <div class="node-label node-label--1">Agora</div>
-        <div class="node-label node-label--2">Education</div>
-        <div class="node-label node-label--3">Advisory</div>
-      </div>
+      {% include "website/includes/media_placeholder.html" with media=hero_diagram_media %}
     </div>
   </div>
   <div class="container hero-media-row">

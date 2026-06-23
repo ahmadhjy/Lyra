@@ -7,8 +7,9 @@ APP_USER="lyra"
 REPO_URL="https://github.com/ahmadhjy/Lyra.git"
 
 echo "==> Installing system packages..."
+export DEBIAN_FRONTEND=noninteractive
 apt update
-apt upgrade -y
+apt upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
 apt install -y python3 python3-pip python3-venv nginx git ufw
 
 echo "==> Creating app user..."

@@ -1,10 +1,12 @@
 """Static page content from Lyra Website Content - Draft."""
 
 
-def media(label, size, ratio="4x3", icon="image", variant=""):
+def media(label, size, ratio="4x3", icon="image", variant="", file=None):
     item = {"label": label, "size": size, "ratio": ratio, "icon": icon}
     if variant:
         item["variant"] = variant
+    if file:
+        item["file"] = file
     return item
 
 
@@ -31,31 +33,59 @@ HOME = {
         ratio="16x9",
         icon="network",
         variant="hero",
+        file="media/home/hero-banner.png",
+    ),
+    "hero_diagram_media": media(
+        "LYRA ecosystem diagram",
+        "900 × 900 px",
+        ratio="square",
+        icon="network",
+        variant="diagram",
+        file="media/home/hero-diagram.png",
     ),
     "approach_media": media(
         "Capability model — literacy to transformation",
         "900 × 600 px",
         ratio="4x3",
         icon="strategy",
+        file="media/home/approach-literacy.png",
     ),
     "pillars": [
         {
             "title": "AI Agora",
             "summary": "Professional AI capability platform for applied, role-specific competence.",
             "anchor": "ecosystem",
-            "media": media("AI Agora platform visual", "600 × 400 px", ratio="3x2", icon="network"),
+            "media": media(
+                "AI Agora platform visual",
+                "600 × 400 px",
+                ratio="3x2",
+                icon="network",
+                file="media/home/pillar-agora.png",
+            ),
         },
         {
             "title": "LYRA Education",
             "summary": "Structured AI literacy pathways across K–12 environments.",
             "anchor": "ecosystem",
-            "media": media("Education & classroom visual", "600 × 400 px", ratio="3x2", icon="education"),
+            "media": media(
+                "Education & classroom visual",
+                "600 × 400 px",
+                ratio="3x2",
+                icon="education",
+                file="media/home/pillar-education.png",
+            ),
         },
         {
             "title": "Advisory & Transformation",
             "summary": "AI strategy and capability building for institutions.",
             "anchor": "ecosystem",
-            "media": media("Institutional advisory visual", "600 × 400 px", ratio="3x2", icon="building"),
+            "media": media(
+                "Institutional advisory visual",
+                "600 × 400 px",
+                ratio="3x2",
+                icon="building",
+                file="media/home/pillar-advisory.png",
+            ),
         },
     ],
 }
@@ -66,11 +96,24 @@ ABOUT = {
         "LYRA is an AI capability and transformation company preparing people "
         "and institutions for the realities of the AI era."
     ),
-    "hero_media": media("About Lyra — brand story visual", "1400 × 560 px", ratio="21x9", icon="people", variant="banner"),
+    "hero_media": media(
+        "About Lyra — brand story visual",
+        "1400 × 560 px",
+        ratio="21x9",
+        icon="people",
+        variant="banner",
+        file="media/about/hero.png",
+    ),
     "sections": [
         {
             "heading": "Who We Are",
-            "media": media("Team / leadership in context", "800 × 600 px", ratio="4x3", icon="people"),
+            "media": media(
+                "Team / leadership in context",
+                "800 × 600 px",
+                ratio="4x3",
+                icon="people",
+                file="media/about/who-we-are.png",
+            ),
             "paragraphs": [
                 (
                     "We work across strategy, learning, and implementation to enable "
@@ -89,7 +132,13 @@ ABOUT = {
         },
         {
             "heading": "Our Vision",
-            "media": media("Vision — future of AI & society", "800 × 600 px", ratio="4x3", icon="vision"),
+            "media": media(
+                "Vision — future of AI & society",
+                "800 × 600 px",
+                ratio="4x3",
+                icon="vision",
+                file="media/about/vision.png",
+            ),
             "paragraphs": [
                 (
                     "A world where artificial intelligence strengthens human potential, "
@@ -100,7 +149,13 @@ ABOUT = {
         },
         {
             "heading": "Our Mission",
-            "media": media("Mission — capability across sectors", "800 × 600 px", ratio="4x3", icon="strategy"),
+            "media": media(
+                "Mission — capability across sectors",
+                "800 × 600 px",
+                ratio="4x3",
+                icon="strategy",
+                file="media/about/mission.png",
+            ),
             "paragraphs": [
                 (
                     "To make AI capability accessible, structured, and responsibly "
@@ -141,7 +196,7 @@ ECOSYSTEM = {
         {
             "heading": "AI Agora",
             "tagline": "AI capability platform for professionals and organizations",
-            "media": media("AI Agora — platform & workflows", "800 × 600 px", ratio="4x3", icon="network"),
+            "media": media("AI Agora — platform & workflows", "800 × 600 px", ratio="4x3", icon="network", file="media/ecosystem/pillar-agora.png"),
             "paragraphs": [
                 (
                     "AI AGORA is a professional AI capability platform built to move individuals "
@@ -160,7 +215,7 @@ ECOSYSTEM = {
         {
             "heading": "LYRA Education",
             "tagline": "Structured AI literacy across K–12",
-            "media": media("LYRA Education — schools & learning", "800 × 600 px", ratio="4x3", icon="education"),
+            "media": media("LYRA Education — schools & learning", "800 × 600 px", ratio="4x3", icon="education", file="media/ecosystem/pillar-education.png"),
             "paragraphs": [
                 (
                     "LYRA Education establishes structured AI literacy and capability pathways "
@@ -180,7 +235,7 @@ ECOSYSTEM = {
         {
             "heading": "Advisory & Transformation",
             "tagline": "AI strategy and capability building for institutions",
-            "media": media("Advisory — institutions & transformation", "800 × 600 px", ratio="4x3", icon="building"),
+            "media": media("Advisory — institutions & transformation", "800 × 600 px", ratio="4x3", icon="building", file="media/ecosystem/pillar-advisory.png"),
             "paragraphs": [
                 (
                     "LYRA works with organizations and public institutions to design and implement "

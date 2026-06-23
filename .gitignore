@@ -9,6 +9,10 @@ staticfiles/
 .DS_Store
 *.sock
 
+# Source media folders (deployed copies live in static/media/)
+Lyra_media/
+Resized/
+
 # Local planning docs (not needed on server)
 *.docx
 *.xlsx
