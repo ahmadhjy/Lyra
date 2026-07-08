@@ -198,7 +198,7 @@ ECOSYSTEM = {
         "AI capability cannot be built through isolated initiatives. LYRA operates "
         "through three interconnected pillars designed to build AI capability at scale."
     ),
-    "hero_media": media("Ecosystem overview visual", "1400 × 560 px", ratio="21x9", icon="network", variant="banner"),
+    "hero_media": media("Ecosystem overview visual", "1536 × 1024 px", ratio="21x9", icon="network", variant="banner", file="media/ecosystem/hero.webp"),
     "sections": [
         {
             "heading": "AI Agora",
@@ -399,6 +399,6 @@ CONTACT = {
         "Build real capability across your organization, workforce, or education system."
     ),
     "cta": "Start the conversation.",
-    "hero_media": media("Partnership & collaboration visual", "1400 × 560 px", ratio="21x9", icon="contact", variant="banner"),
-    "side_media": media("Contact / office / collaboration scene", "800 × 900 px", ratio="portrait", icon="contact", variant="portrait"),
+    "hero_media": media("Partnership & collaboration visual", "1536 × 1024 px", ratio="21x9", icon="contact", variant="banner", file="media/contact/hero.webp"),
+    "side_media": media("Partnership & connection visual", "900 × 1350 px", ratio="portrait", icon="contact", variant="portrait", file="media/contact/side.webp"),
 }

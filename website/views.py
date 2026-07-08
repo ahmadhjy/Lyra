@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.mail import EmailMessage
 from django.shortcuts import render
 
 from . import content
@@ -62,8 +63,26 @@ def why_lyra(request):
 def contact(request):
     ctx = {**_nav_context("contact"), **content.CONTACT}
     ctx["contact_email"] = getattr(settings, "CONTACT_EMAIL", "info@lyraaiqat.com")
-    # Form is UI-only for now — email delivery stays disabled until
-    # the client provides mailbox / SMTP access for info@lyraaiqat.com.
     if request.method == "POST":
+        name = request.POST.get("name", "").strip()
+        email = request.POST.get("email", "").strip()
+        organization = request.POST.get("organization", "").strip()
+        message = request.POST.get("message", "").strip()
+
+        body = (
+            "New contact form submission from lyraaiqat.com\n\n"
+            f"Name: {name or '—'}\n"
+            f"Email: {email or '—'}\n"
+            f"Organization: {organization or '—'}\n\n"
+            f"Message:\n{message or '—'}\n"
+        )
+
+        EmailMessage(
+            subject=f"[LYRA] New inquiry from {name or 'website visitor'}",
+            body=body,
+            to=[settings.CONTACT_EMAIL],
+            reply_to=[email] if email else None,
+        ).send(fail_silently=True)
+
         ctx["form_sent"] = True
     return render(request, "website/contact.html", ctx)

@@ -62,6 +62,19 @@ function initScrollReveal() {
     section.querySelectorAll(targets).forEach((el, index) => {
       el.classList.add("reveal");
       el.style.setProperty("--reveal-delay", `${Math.min(index * 80, 400)}ms`);
+
+      // Directional variants for richer motion.
+      if (el.classList.contains("media-block") || el.querySelector(".media-block")) {
+        el.classList.add("reveal--scale");
+      }
+      const block = el.closest(".content-block--has-media");
+      if (block) {
+        el.classList.add(
+          block.classList.contains("content-block--reverse")
+            ? "reveal--right"
+            : "reveal--left"
+        );
+      }
     });
   });
 

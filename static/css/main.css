@@ -1689,11 +1689,24 @@ h3 {
       opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  .reveal--left {
+    transform: translateX(-32px);
+  }
+
+  .reveal--right {
+    transform: translateX(32px);
+  }
+
+  .reveal--scale {
+    transform: scale(0.94);
   }
 
   .reveal.is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0, 0) scale(1);
   }
 }
 
@@ -1827,5 +1840,97 @@ h3 {
   }
   100% {
     background-position: -120% 0;
+  }
+}
+
+/* ── Extra interaction motion ── */
+@media (prefers-reduced-motion: no-preference) {
+  /* Sweeping light across primary buttons on hover */
+  .btn-primary,
+  .btn-light,
+  .nav-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::after,
+  .btn-light::after,
+  .nav-cta::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 255, 255, 0.45),
+      transparent
+    );
+    transform: skewX(-18deg);
+    transition: left 0.6s ease;
+    pointer-events: none;
+  }
+
+  .btn-primary:hover::after,
+  .btn-light:hover::after,
+  .nav-cta:hover::after {
+    left: 130%;
+  }
+
+  /* Animated brand gradient on the CTA band */
+  .cta-band {
+    background: linear-gradient(
+      90deg,
+      var(--lyra-navy) 0%,
+      #1a4a9e 45%,
+      var(--lyra-cyan) 100%
+    );
+    background-size: 200% auto;
+    animation: gradient-shift 12s ease infinite;
+  }
+
+  /* Breathing glow on eyebrow badges */
+  .eyebrow {
+    animation: badge-glow 6s ease-in-out infinite;
+  }
+
+  /* Shimmer on the pillar/card top accent line */
+  .card-accent {
+    background: linear-gradient(
+      90deg,
+      var(--lyra-navy),
+      var(--lyra-cyan),
+      var(--lyra-navy)
+    );
+    background-size: 200% auto;
+    animation: gradient-shift 6s linear infinite;
+  }
+
+  /* Subtle lift on list rows */
+  .steps li,
+  .bullet-list li {
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+
+  .steps li:hover,
+  .bullet-list li:hover {
+    transform: translateX(4px);
+  }
+
+  /* Gentle float on the contact side portrait */
+  .contact-side-media .media-block {
+    animation: floaty 12s ease-in-out infinite;
+  }
+}
+
+@keyframes badge-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(119, 247, 245, 0);
+  }
+  50% {
+    box-shadow: 0 0 18px 0 rgba(119, 247, 245, 0.45);
   }
 }
