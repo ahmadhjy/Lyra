@@ -1373,12 +1373,15 @@ h3 {
 }
 
 .footer-mark {
-  color: rgba(119, 247, 245, 0.35);
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.85;
 }
 
-.footer-mark svg {
+.footer-mark__img {
   width: 48px;
   height: auto;
+  display: block;
 }
 
 /* ── Floating chat ── */
