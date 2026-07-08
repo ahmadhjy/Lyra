@@ -25,10 +25,11 @@
       </div>
       <h2>{{ cta }}</h2>
       <p>
-        This demo includes a contact form layout. In production, submissions will be
-        connected to your email or CRM.
+        Tell us about your organization and goals. Submissions are sent directly to
+        our team and we'll respond to your email.
       </p>
       <ul class="contact-meta">
+        <li><strong>Email</strong> <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></li>
         <li><strong>Phase 1</strong> Informative website &amp; branding</li>
         <li><strong>Phase 2</strong> Courses platform &amp; dashboards</li>
       </ul>
@@ -36,7 +37,7 @@
     {% if form_sent %}
     <div class="contact-form contact-form--success" role="status">
       <h3>Thank you</h3>
-      <p>Your message was received (demo). We will connect email delivery in the next iteration.</p>
+      <p>Your message has been sent to our team. We'll get back to you by email shortly.</p>
       <a href="{% url 'home' %}" class="btn btn-primary">Back to home</a>
     </div>
     {% else %}
@@ -58,8 +59,8 @@
         <span>Message</span>
         <textarea name="message" rows="5" placeholder="How can LYRA support your AI capability goals?" required></textarea>
       </label>
-      <button type="submit" class="btn btn-primary btn-block">Send message (demo)</button>
-      <p class="form-note">Demo only — form is not wired to email yet.</p>
+      <button type="submit" class="btn btn-primary btn-block">Send message</button>
+      <p class="form-note">Your message goes straight to our team at {{ contact_email }}.</p>
     </form>
     {% endif %}
   </div>

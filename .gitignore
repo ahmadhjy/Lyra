@@ -12,6 +12,8 @@ staticfiles/
 # Source media folders (deployed copies live in static/media/)
 Lyra_media/
 Resized/
+_media_incoming/
+*.zip
 
 # Local planning docs (not needed on server)
 *.docx

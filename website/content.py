@@ -260,46 +260,46 @@ WHO_WE_SERVE = {
     "intro": (
         "LYRA works across the full spectrum of stakeholders shaping and responding to the AI era."
     ),
-    "hero_media": media("Audience overview — sectors & stakeholders", "1400 × 560 px", ratio="21x9", icon="audience", variant="banner"),
+    "hero_media": media("Audience overview — sectors & stakeholders", "1600 × 640 px", ratio="21x9", icon="audience", variant="banner", file="media/who-we-serve/hero.webp"),
     "sections": [
         {
             "heading": "Organizations and Enterprises",
-            "media": media("Enterprises & teams", "480 × 360 px", ratio="4x3", icon="building", variant="tile"),
+            "media": media("Enterprises & teams", "1100 × 825 px", ratio="4x3", icon="building", variant="tile", file="media/who-we-serve/organizations.webp"),
             "paragraphs": [
                 "Building AI capability across leadership, teams, and operational workflows."
             ],
         },
         {
             "heading": "Government and Public Sector",
-            "media": media("Government & public sector", "480 × 360 px", ratio="4x3", icon="building", variant="tile"),
+            "media": media("Government & public sector", "1100 × 825 px", ratio="4x3", icon="building", variant="tile", file="media/who-we-serve/government.webp"),
             "paragraphs": [
                 "Supporting structured, responsible AI adoption within public institutions and systems."
             ],
         },
         {
             "heading": "Universities and Education Systems",
-            "media": media("Universities & higher education", "480 × 360 px", ratio="4x3", icon="education", variant="tile"),
+            "media": media("Universities & higher education", "1100 × 825 px", ratio="4x3", icon="education", variant="tile", file="media/who-we-serve/universities.webp"),
             "paragraphs": [
                 "Integrating AI into academic environments, research, and institutional strategy."
             ],
         },
         {
             "heading": "Schools (K–12)",
-            "media": media("K–12 schools", "480 × 360 px", ratio="4x3", icon="education", variant="tile"),
+            "media": media("K–12 schools", "1100 × 825 px", ratio="4x3", icon="education", variant="tile", file="media/who-we-serve/schools.webp"),
             "paragraphs": [
                 "Developing foundational AI literacy and responsible use from an early stage."
             ],
         },
         {
             "heading": "Professionals and Leaders",
-            "media": media("Professionals & leaders", "480 × 360 px", ratio="4x3", icon="people", variant="tile"),
+            "media": media("Professionals & leaders", "1100 × 825 px", ratio="4x3", icon="people", variant="tile", file="media/who-we-serve/professionals.webp"),
             "paragraphs": [
                 "Equipping individuals with the judgment and capability to apply AI in real contexts."
             ],
         },
         {
             "heading": "Youth and Emerging Workforce",
-            "media": media("Youth & emerging workforce", "480 × 360 px", ratio="4x3", icon="audience", variant="tile"),
+            "media": media("Youth & emerging workforce", "1100 × 825 px", ratio="4x3", icon="audience", variant="tile", file="media/who-we-serve/youth.webp"),
             "paragraphs": [
                 "Preparing the next generation to engage with AI with awareness, adaptability, and responsibility."
             ],
@@ -313,12 +313,12 @@ APPROACH = {
         "LYRA's methodology is defined through the LYRA AI Capability Model, a three-layer "
         "framework that guides individuals and institutions from initial awareness to embedded AI transformation."
     ),
-    "hero_media": media("LYRA AI Capability Model diagram", "1400 × 560 px", ratio="21x9", icon="strategy", variant="banner"),
+    "hero_media": media("LYRA AI Capability Model diagram", "1600 × 640 px", ratio="21x9", icon="strategy", variant="banner", file="media/approach/hero.webp"),
     "sections": [
         {
             "heading": "AI Literacy",
             "tagline": "Understanding before application",
-            "media": media("AI Literacy — understanding layer", "800 × 600 px", ratio="4x3", icon="education"),
+            "media": media("AI Literacy — understanding layer", "1100 × 825 px", ratio="4x3", icon="education", file="media/approach/ai-literacy.webp"),
             "paragraphs": [
                 (
                     "AI Literacy establishes a grounded understanding of how artificial intelligence works, "
@@ -330,7 +330,7 @@ APPROACH = {
         {
             "heading": "AI Capability",
             "tagline": "From knowledge to execution",
-            "media": media("AI Capability — application layer", "800 × 600 px", ratio="4x3", icon="strategy"),
+            "media": media("AI Capability — application layer", "1100 × 825 px", ratio="4x3", icon="strategy", file="media/approach/ai-capability.webp"),
             "paragraphs": [
                 (
                     "AI Capability focuses on applying AI within real professional and institutional contexts. "
@@ -341,7 +341,7 @@ APPROACH = {
         {
             "heading": "AI Transformation",
             "tagline": "Embedding AI into how systems operate",
-            "media": media("AI Transformation — systems layer", "800 × 600 px", ratio="4x3", icon="network"),
+            "media": media("AI Transformation — systems layer", "1100 × 825 px", ratio="4x3", icon="network", file="media/approach/ai-transformation.webp"),
             "paragraphs": [
                 (
                     "AI Transformation is where capability is integrated at the level of strategy, operations, "
@@ -359,11 +359,11 @@ WHY_LYRA = {
         "AI adoption is not failing because of technology. It is failing because capability "
         "is missing where it matters most."
     ),
-    "hero_media": media("Why Lyra — differentiation visual", "1400 × 560 px", ratio="21x9", icon="vision", variant="banner"),
+    "hero_media": media("Why Lyra — differentiation visual", "1600 × 640 px", ratio="21x9", icon="vision", variant="banner", file="media/why-lyra/hero.webp"),
     "sections": [
         {
             "heading": "The gap we address",
-            "media": media("The capability gap in AI adoption", "800 × 600 px", ratio="4x3", icon="strategy"),
+            "media": media("The capability gap in AI adoption", "1100 × 825 px", ratio="4x3", icon="strategy", file="media/why-lyra/gap.webp"),
             "paragraphs": [
                 (
                     "Organizations invest in tools, but overlook the people, structures, and decisions "
@@ -374,7 +374,7 @@ WHY_LYRA = {
         },
         {
             "heading": "What LYRA translates AI into",
-            "media": media("AI impact — practice, workflows, education, society", "800 × 600 px", ratio="4x3", icon="network"),
+            "media": media("AI impact — practice, workflows, education, society", "1100 × 825 px", ratio="4x3", icon="network", file="media/why-lyra/translate.webp"),
             "bullets": [
                 "Professional practice — how individuals think, decide, and perform their work",
                 "Organizational workflows — how teams operate and integrate AI into processes",

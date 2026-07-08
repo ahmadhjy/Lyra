@@ -80,7 +80,8 @@
     </div>
   </footer>
 
-  <button type="button" class="chat-fab" id="chat-fab" aria-label="Open chat assistant" aria-expanded="false">
+  {# Chat assistant hidden until the AI chat backend is ready for integration. #}
+  <button type="button" class="chat-fab" id="chat-fab" aria-label="Open chat assistant" aria-expanded="false" hidden>
     <svg class="chat-fab__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M12 3C7.03 3 3 6.58 3 11c0 2.1.9 4.01 2.41 5.47L4 21l4.84-1.62A9.8 9.8 0 0 0 12 19c4.97 0 9-3.58 9-8s-4.03-8-9-8Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
       <circle cx="8.25" cy="11" r="1" fill="currentColor"/>
@@ -90,7 +91,7 @@
     <span class="chat-fab__label">Chat</span>
   </button>
 
-  <div class="chat-panel" id="chat-panel" role="dialog" aria-label="Chat assistant" aria-hidden="true" hidden>
+  <div class="chat-panel" id="chat-panel" role="dialog" aria-label="Chat assistant" aria-hidden="true" hidden data-chat-disabled>
     <div class="chat-panel__header">
       <div class="chat-panel__title">
         <span class="chat-panel__dot" aria-hidden="true"></span>

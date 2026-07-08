@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatPanel = document.getElementById("chat-panel");
   const chatClose = document.getElementById("chat-panel-close");
 
-  if (!chatFab || !chatPanel) return;
+  // Chat is disabled/hidden until the AI backend is integrated.
+  if (!chatFab || !chatPanel || chatFab.hidden) return;
 
   const openChat = () => {
     chatPanel.hidden = false;
