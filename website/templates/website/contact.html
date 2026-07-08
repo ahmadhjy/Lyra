@@ -25,8 +25,9 @@
       </div>
       <h2>{{ cta }}</h2>
       <p>
-        Tell us about your organization and goals. Submissions are sent directly to
-        our team and we'll respond to your email.
+        Prefer email? Reach us directly at
+        <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.
+        The form below will be connected to this inbox once email delivery is set up.
       </p>
       <ul class="contact-meta">
         <li><strong>Email</strong> <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></li>
@@ -37,7 +38,10 @@
     {% if form_sent %}
     <div class="contact-form contact-form--success" role="status">
       <h3>Thank you</h3>
-      <p>Your message has been sent to our team. We'll get back to you by email shortly.</p>
+      <p>
+        Thanks for reaching out. Until email delivery is connected, please also
+        email us at <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.
+      </p>
       <a href="{% url 'home' %}" class="btn btn-primary">Back to home</a>
     </div>
     {% else %}
@@ -60,7 +64,7 @@
         <textarea name="message" rows="5" placeholder="How can LYRA support your AI capability goals?" required></textarea>
       </label>
       <button type="submit" class="btn btn-primary btn-block">Send message</button>
-      <p class="form-note">Your message goes straight to our team at {{ contact_email }}.</p>
+      <p class="form-note">Form layout is live. Email delivery will be wired to {{ contact_email }} next.</p>
     </form>
     {% endif %}
   </div>

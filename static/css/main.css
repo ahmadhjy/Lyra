@@ -925,6 +925,15 @@ h3 {
   max-width: 420px;
 }
 
+.media-block--portrait:has(.media-block__img) .media-block__frame {
+  max-width: min(420px, 100%);
+  width: 100%;
+}
+
+.content-block--has-media .media-block--portrait:has(.media-block__img) {
+  max-width: min(420px, 100%);
+}
+
 .section-dark .media-block__frame {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.12);

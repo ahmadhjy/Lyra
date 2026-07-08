@@ -166,7 +166,14 @@ ABOUT = {
         {
             "heading": "Founders",
             "paragraphs": [],
-            "media": media("Dr. Sally Hammoud — portrait", "600 × 750 px", ratio="portrait", icon="people", variant="portrait"),
+            "media": media(
+                "Dr. Sally Hammoud — portrait",
+                "900 × 1125 px",
+                ratio="portrait",
+                icon="people",
+                variant="portrait",
+                file="media/about/sally-hammoud.webp",
+            ),
             "cards": [
                 {
                     "name": "Dr. Sally Hammoud",
