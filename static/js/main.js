@@ -55,7 +55,7 @@ function initScrollReveal() {
 
   const targets =
     ".section-header, .hero-copy, .hero-visual, .hero-stats, .hero-media-row, .card, " +
-    ".approach-grid__left, .approach-grid__media, .cta-band-inner, .content-block, " +
+    ".agora-card, .approach-grid__left, .approach-grid__media, .cta-band-inner, .content-block, " +
     ".split > div, .page-hero__copy, .page-hero__media, .contact-grid > div, .panel, .steps";
 
   document.querySelectorAll("main section, main .page-hero").forEach((section) => {

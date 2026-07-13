@@ -14,6 +14,7 @@ NAV = [
     {"label": "Home", "url_name": "home"},
     {"label": "About Lyra", "url_name": "about"},
     {"label": "Our Ecosystem", "url_name": "ecosystem"},
+    {"label": "AI Agora", "url_name": "ai_agora"},
     {"label": "Who We Serve", "url_name": "who_we_serve"},
     {"label": "Our Approach", "url_name": "approach"},
     {"label": "Why Lyra", "url_name": "why_lyra"},

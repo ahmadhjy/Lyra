@@ -112,6 +112,9 @@ CONTACT_EMAIL = os.environ.get("DJANGO_CONTACT_EMAIL", "info@lyraaiqat.com")
 DEFAULT_FROM_EMAIL = os.environ.get("DJANGO_DEFAULT_FROM_EMAIL", CONTACT_EMAIL)
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
+# AI Agora referral webhook (Matrix TRC posts enrollments here).
+AGORA_WEBHOOK_SECRET = os.environ.get("DJANGO_AGORA_WEBHOOK_SECRET", "")
+
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SESSION_COOKIE_SECURE = True

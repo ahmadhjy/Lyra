@@ -1,0 +1,67 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ intro }}{% endblock %}
+
+{% block content %}
+<section class="page-hero page-hero--split">
+  <div class="page-hero__accent" aria-hidden="true"></div>
+  <div class="container page-hero__grid">
+    <div class="page-hero__copy">
+      <p class="eyebrow">Professional AI Capability</p>
+      <h1>{{ title }}</h1>
+      <p class="lead">{{ intro }}</p>
+      <p class="agora-partner-note">
+        Courses delivered by our partner
+        <a href="{{ partner_url }}" target="_blank" rel="noopener noreferrer">{{ partner_name }}</a>.
+      </p>
+    </div>
+    <div class="page-hero__media">
+      <figure class="media-block media-block--3x2">
+        <div class="media-block__frame">
+          <img src="{% static hero_media.file %}" alt="{{ hero_media.label }}" class="media-block__img" loading="lazy" decoding="async">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section-header">
+      <p class="eyebrow">Course archive</p>
+      <h2>Explore professional AI courses</h2>
+      <p class="section-intro">
+        Select a course to view details and enroll on {{ partner_name }}.
+        Your visit is tracked so LYRA can measure referrals from this archive.
+      </p>
+    </header>
+
+    <div class="agora-grid">
+      {% for course in courses %}
+      <article class="agora-card">
+        <a href="{% url 'agora_referral_redirect' course.slug %}" class="agora-card__media" target="_blank" rel="noopener noreferrer">
+          <img src="{% static course.image %}" alt="{{ course.title }}" class="agora-card__img" loading="lazy" decoding="async">
+        </a>
+        <div class="agora-card__body">
+          <h3>{{ course.title }}</h3>
+          <p>{{ course.description }}</p>
+          <a href="{% url 'agora_referral_redirect' course.slug %}" class="btn btn-primary agora-card__cta" target="_blank" rel="noopener noreferrer">
+            Enroll on {{ partner_name }} &rarr;
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band cta-band--compact">
+  <div class="cta-band__glow" aria-hidden="true"></div>
+  <div class="container cta-band-inner">
+    <p>Need guidance on which course fits your goals?</p>
+    <a href="{% url 'contact' %}" class="btn btn-light">Contact LYRA</a>
+  </div>
+</section>
+{% endblock %}

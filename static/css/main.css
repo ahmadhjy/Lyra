@@ -1937,3 +1937,88 @@ h3 {
     box-shadow: 0 0 18px 0 rgba(119, 247, 245, 0.45);
   }
 }
+
+/* ── AI Agora course archive ── */
+.agora-partner-note {
+  margin-top: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.agora-partner-note a {
+  font-weight: 600;
+}
+
+.agora-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.agora-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+}
+
+.agora-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(119, 247, 245, 0.45);
+}
+
+.agora-card__media {
+  display: block;
+  background: var(--bg-muted);
+  overflow: hidden;
+}
+
+.agora-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.agora-card:hover .agora-card__img {
+  transform: scale(1.02);
+}
+
+.agora-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+
+.agora-card__body h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+}
+
+.agora-card__body p {
+  flex: 1;
+  margin: 0 0 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.agora-card__cta {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (max-width: 960px) {
+  .agora-grid {
+    grid-template-columns: 1fr;
+  }
+}
