@@ -100,6 +100,15 @@ COURSES = [
         ),
         "image": "media/agora/courses/data-management-and-sql.webp",
     },
+    {
+        "slug": "course-10-designing-an-ai-agent",
+        "title": "Agentic AI",
+        "description": (
+            "Design, build, test, and improve AI agents under the structured DMAIC "
+            "framework — covering the full agent development lifecycle from definition to control."
+        ),
+        "image": "media/agora/courses/course-10-designing-an-ai-agent.webp",
+    },
 ]
 
 
