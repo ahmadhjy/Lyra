@@ -6,8 +6,7 @@ AGORA = {
     "title": "AI Agora",
     "intro": (
         "Professional AI capability courses delivered through our partner Matrix TRC. "
-        "Browse the archive below and enroll on their platform — every visit is tracked "
-        "so we can measure interest and referrals."
+        "Browse the archive below and enroll on their platform."
     ),
     "partner_name": "Matrix TRC",
     "partner_url": "https://www.matrixtrc.ai/courses",
